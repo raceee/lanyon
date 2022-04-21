@@ -7,16 +7,25 @@ As silly as this sounds my first blog post being about World of Warcraft is prec
 
 ### Quick Introduction
 
-World of Warcraft is a [MMORPG](https://en.wikipedia.org/wiki/Massively_multiplayer_online_role-playing_game) where players must create the character they play. They choose a faction, race, class, then a specilization of that class. Once you create this character your adventure begins. This ability to be a tailored individual is exemplified by the interaction between other players. When you team up your individuality contributes to helping the group. While adventuring alone in the open world you must find wepons and quests specific to the identity you chose. It truly is a great time. 
+World of Warcraft is a [MMORPG](https://en.wikipedia.org/wiki/Massively_multiplayer_online_role-playing_game) where players must create the character they play. They choose a faction, race, class, then a specilization of that class. Once you create this character your adventure begins. This freedom to be a tailored individual is exemplified by the interaction between other players. When you team up your individuality contributes to helping the group. While adventuring alone in the open world you must find wepons and quests specific to the identity you chose. It truly is a great time. 
 
-### The Problem
+### Meta
 
 The wonderment that World of Warcraft had captured predates its infection. Starting in 2004 WoW came out a year before Youtube and Reddit, two years before its most popular fourm [Wowhead](https://www.wowhead.com), and six years before its encyclopedia [Wowpedia](https://wowpedia.fandom.com). On all of these online resources to the game players read and learn about all the secrets, exploits and meta strategies. This network of information introduced a social pressure to the game generally refered to as "the meta". The meta is discovered when players team up to optimize and expedite every aspect of the game.
 
-This is where the problem begins. The World of Warcraft community has become a [particle swarm optimizer](https://ieeexplore.ieee.org/abstract/document/488968?casa_token=cCQ89OABJjAAAAAA:o4BQOajwvtD5GOR983JxuTebVdruDvjvqlJTIsEw9KU_fm-dRA3Me7_b0z5XJPBICIGo7qmylQ) expediting a game that has a monthly subscription. So how does a game developer make a fun game, immunize it from community swarm optimization, and protect its monthly subscription?
+This is where the problem begins. The World of Warcraft community has become a [particle swarm optimizer](https://ieeexplore.ieee.org/abstract/document/488968?casa_token=cCQ89OABJjAAAAAA:o4BQOajwvtD5GOR983JxuTebVdruDvjvqlJTIsEw9KU_fm-dRA3Me7_b0z5XJPBICIGo7qmylQ) expediting a game that has a monthly subscription. 
+
+### Thesis
+World of Warcraft's (and most other MMORPGs) over developed meta introduces social restrictions to the game that wastes developer time, minimizes membership revenue and magnifies player inequalities.
 
 ### The Solution
-Our effort will be to create dynamic or intelligent raid bosses. Meaning, that as the community discusses strategies and approaches to beat the boss the boss must do the computational equivalent. To get to that end
+So how does a game developer make a fun game, immunize it from community swarm optimization without restricting content creators, and protect its monthly subscription?
+
+Our effort will be to create dynamic or intelligent raid bosses. Meaning, that as the community discusses strategies and approaches to beat the boss the boss must do the computational equivalent. To further the challenge we will do this change with no identity change of the current form of World of Warcraft. Here is our plan:
+* Introduce a low rank vector space that defines a player's stats
+* Analyze a KMeans clustering of this vector space using a concentration algorithm
+* Play with the KMeans centroids and randomly sample within a n-sphere to prevent counter analytics that may occur
+
 
 
 [Jekyll](http://jekyllrb.com)
