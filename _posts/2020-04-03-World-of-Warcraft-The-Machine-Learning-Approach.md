@@ -7,13 +7,13 @@ As silly as this sounds my first blog post being about World of Warcraft is prec
 
 ### Quick Introduction
 
-World of Warcraft is a [MMORPG](https://en.wikipedia.org/wiki/Massively_multiplayer_online_role-playing_game) where players adventure to complete quests, level up, fight each other, team up. Launched in 2004, World of Warcraft brought this genre of game into the main stream requiring cooperation between large communities of people. Each player would 
-
-The scale of the game was huge as well, truly a player must turn over every rock to find secrets and items that would give their character advantages.
-
-Preseverving this sense of wonderment is essential to this type of game being fun, but in 2022 it is gone. Not due to any developer incompetience, but due to the maturing of the internet as a whole around it. In 2004 a player would explore alone, however in 2005 adventurers could look up secrets and discuss optimal leveling routes on new websites like Reddit and Youtube.
+World of Warcraft is a [MMORPG](https://en.wikipedia.org/wiki/Massively_multiplayer_online_role-playing_game) where players must create the character they play. They choose a faction, race, class, then a specilization of that class. Once you create this character your adventure begins. This ability to be a tailored individual is exemplified by the interaction between other players. When you team up your individuality contributes to helping the group. While adventuring alone in the open world you must find wepons and quests specific to the identity you chose. It truly is a great time. 
 
 ### The Problem
+
+The wonderment that World of Warcraft had captured predates its infection. Starting in 2004 WoW came out a year before Youtube and Reddit, two years before its most popular fourm [Wowhead](https://www.wowhead.com), and six years before its encyclopedia [Wowpedia](https://wowpedia.fandom.com). On all of these online resources to the game players read and learn about all the secrets, exploits and meta strategies. This network of information introduced a social pressure to the game generally refered to as "the meta". The meta is discovered when players team up to optimize and expedite every aspect of the game.
+
+This is where the problem begins. The World of Warcraft community has become a [particle swarm optimizer](https://ieeexplore.ieee.org/abstract/document/488968?casa_token=cCQ89OABJjAAAAAA:o4BQOajwvtD5GOR983JxuTebVdruDvjvqlJTIsEw9KU_fm-dRA3Me7_b0z5XJPBICIGo7qmylQ). Expediting a game that has a monthly subscription is dangerous buisness.
 
 The developers of World of Warcraft suffer from a problem called [particle swarm optimization](https://ieeexplore.ieee.org/abstract/document/488968?casa_token=cCQ89OABJjAAAAAA:o4BQOajwvtD5GOR983JxuTebVdruDvjvqlJTIsEw9KU_fm-dRA3Me7_b0z5XJPBICIGo7qmylQ). With the modern mass communication platforms like twitch.tv, youtube, and Reddit, players can datamine secrets, share [class optimizations](https://www.raidbots.com/simbot), and create video walkthroughs of the hardest parts of the game -- sometimes even before players can play the new game expansion.
 
