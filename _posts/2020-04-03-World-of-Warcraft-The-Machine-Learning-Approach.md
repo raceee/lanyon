@@ -26,6 +26,8 @@ Our effort will be to create dynamic or intelligent raid bosses. Meaning, that a
 * Analyze a KMeans clustering of this vector space using a concentration algorithm
 * Play with the KMeans centroids and randomly sample within a n-sphere to prevent counter analytics that may occur
 
+$$x^2 + y^2 = z^2$$
+
 
 
 [Jekyll](http://jekyllrb.com)
