@@ -5,9 +5,11 @@ title: 'World of Warcraft: The Machine Learning Approach'
 
 As silly as this sounds my first blog post being about World of Warcraft is precious to me. This game is a major reason why I went into mathematics and an activity that drew me closer to family, so to come back to it now with some technical input is a pleasure :)
 
-### The Game
+### Quick Introduction
 
-World of Warcraft is a [MMORPG](https://en.wikipedia.org/wiki/Massively_multiplayer_online_role-playing_game) where players adventure to complete quests, level up, fight each other, team up. Launched in 2004, World of Warcraft brought this genre of game into the main stream requiring cooperation between large communities of people. The scale of the game was huge as well, truly a player must turn over every rock to find secrets and items that would give their character advantages.
+World of Warcraft is a [MMORPG](https://en.wikipedia.org/wiki/Massively_multiplayer_online_role-playing_game) where players adventure to complete quests, level up, fight each other, team up. Launched in 2004, World of Warcraft brought this genre of game into the main stream requiring cooperation between large communities of people. Each player would 
+
+The scale of the game was huge as well, truly a player must turn over every rock to find secrets and items that would give their character advantages.
 
 Preseverving this sense of wonderment is essential to this type of game being fun, but in 2022 it is gone. Not due to any developer incompetience, but due to the maturing of the internet as a whole around it. In 2004 a player would explore alone, however in 2005 adventurers could look up secrets and discuss optimal leveling routes on new websites like Reddit and Youtube.
 
