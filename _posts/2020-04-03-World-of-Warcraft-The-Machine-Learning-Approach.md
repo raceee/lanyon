@@ -3,7 +3,7 @@ layout: post
 title: 'World of Warcraft: The Machine Learning Approach'
 ---
 
-<img src="_posts\thumb.jpg"/>
+<img src="thumb.jpg"/>
 
 As silly as this sounds my first blog post being about World of Warcraft is precious to me. This game is a major reason why I went into mathematics and an activity that drew me closer to family, so to come back to it now with some technical input is a pleasure :)
 
