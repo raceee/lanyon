@@ -13,12 +13,10 @@ World of Warcraft is a [MMORPG](https://en.wikipedia.org/wiki/Massively_multipla
 
 The wonderment that World of Warcraft had captured predates its infection. Starting in 2004 WoW came out a year before Youtube and Reddit, two years before its most popular fourm [Wowhead](https://www.wowhead.com), and six years before its encyclopedia [Wowpedia](https://wowpedia.fandom.com). On all of these online resources to the game players read and learn about all the secrets, exploits and meta strategies. This network of information introduced a social pressure to the game generally refered to as "the meta". The meta is discovered when players team up to optimize and expedite every aspect of the game.
 
-This is where the problem begins. The World of Warcraft community has become a [particle swarm optimizer](https://ieeexplore.ieee.org/abstract/document/488968?casa_token=cCQ89OABJjAAAAAA:o4BQOajwvtD5GOR983JxuTebVdruDvjvqlJTIsEw9KU_fm-dRA3Me7_b0z5XJPBICIGo7qmylQ). Expediting a game that has a monthly subscription is dangerous buisness.
+This is where the problem begins. The World of Warcraft community has become a [particle swarm optimizer](https://ieeexplore.ieee.org/abstract/document/488968?casa_token=cCQ89OABJjAAAAAA:o4BQOajwvtD5GOR983JxuTebVdruDvjvqlJTIsEw9KU_fm-dRA3Me7_b0z5XJPBICIGo7qmylQ) expediting a game that has a monthly subscription. So how does a game developer make a fun game, immunize it from community swarm optimization, and protect its monthly subscription?
 
-The developers of World of Warcraft suffer from a problem called [particle swarm optimization](https://ieeexplore.ieee.org/abstract/document/488968?casa_token=cCQ89OABJjAAAAAA:o4BQOajwvtD5GOR983JxuTebVdruDvjvqlJTIsEw9KU_fm-dRA3Me7_b0z5XJPBICIGo7qmylQ). With the modern mass communication platforms like twitch.tv, youtube, and Reddit, players can datamine secrets, share [class optimizations](https://www.raidbots.com/simbot), and create video walkthroughs of the hardest parts of the game -- sometimes even before players can play the new game expansion.
-
-This behavior from the players is all fine and good, but to play World of Warcraft you must pay a montly subscription fee.
-
+### The Solution
+Our effort will be to create dynamic or intelligent raid bosses. Meaning, that as the community discusses strategies and approaches to beat the boss the boss must do the computational equivalent. To get to that end
 
 
 [Jekyll](http://jekyllrb.com)
