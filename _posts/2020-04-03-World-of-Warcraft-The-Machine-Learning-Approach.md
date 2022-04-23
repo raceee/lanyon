@@ -3,7 +3,14 @@ layout: post
 title: 'World of Warcraft: The Machine Learning Approach'
 ---
 
-<img src="thumb.jpg"/>
+<style type="text/css">
+    .centerImage
+    {
+        text-align:center;
+        display:block;
+    }
+</style>
+
 
 As silly as this sounds my first blog post being about World of Warcraft is precious to me. This game is a major reason why I went into mathematics and an activity that drew me closer to family, so to come back to it now with some technical input is a pleasure :)
 
@@ -28,7 +35,7 @@ Our effort will be to create dynamic or intelligent raid bosses. Meaning, that a
 * Analyze a KMeans clustering of this vector space using a concentration algorithm
 * Play with the KMeans centroids and randomly sample within a n-sphere to prevent counter analytics that may occur
 
-<img src="https://latex.codecogs.com/svg.image?\block&space;x^2&space;&plus;&space;y^2&space;=&space;z^2" title="https://latex.codecogs.com/svg.image?\block x^2 + y^2 = z^2" />
+<img src="https://latex.codecogs.com/svg.image?\block&space;x^2&space;&plus;&space;y^2&space;=&space;z^2" title="https://latex.codecogs.com/svg.image?\block x^2 + y^2 = z^2" class="centerImage">
 
 
 
