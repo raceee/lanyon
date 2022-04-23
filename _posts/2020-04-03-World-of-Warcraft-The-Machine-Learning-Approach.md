@@ -40,7 +40,7 @@ Our effort will be to create dynamic or intelligent raid bosses. Meaning, that a
 Let's describe the vector space that we will be working in. Each combat entity in the game players and NPC's will have both defensive and attack vectors.
 
 
-<img src="https://latex.codecogs.com/svg.image?\block&space;x^2&space;&plus;&space;y^2&space;=&space;z^2" title="https://latex.codecogs.com/svg.image?\block x^2 + y^2 = z^2" class="centerImage">
+<img src="https://latex.codecogs.com/svg.image?\block&space;x^2&space;&plus;&space;y^2&space;=&space;z^2" class="centerImage">
 
 
 
