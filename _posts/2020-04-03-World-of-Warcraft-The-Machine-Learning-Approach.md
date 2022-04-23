@@ -28,6 +28,12 @@ Our effort will be to create dynamic or intelligent raid bosses. Meaning, that a
 * Analyze a KMeans clustering of this vector space using a concentration algorithm
 * Play with the KMeans centroids and randomly sample within a n-sphere to prevent counter analytics that may occur
 
+### The "Elemental Statline"
+
+Let's describe the vector space that we will be working in. Each combat entity in the game players and NPC's will have both defensive and attack vectors.
+
+
+
 <p style="text-align:center;"><img src="https://latex.codecogs.com/svg.image?\inline&space;x^2&space;&plus;&space;y^2&space;=&space;z^2" title="https://latex.codecogs.com/svg.image?\inline x^2 + y^2 = z^2"></p>
 
 
