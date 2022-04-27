@@ -37,12 +37,20 @@ Our effort will be to create dynamic or intelligent raid bosses. Meaning, that a
 
 ### The "Elemental Statline"
 
-Let's describe the vector space that we will be working in. Each combat entity in the game players and NPC's will have both defensive and attack vectors.
+In World of Warcraft classes can do different types of damage they are:
+* Fire
+* Frost
+* Arcane
+* Nature
+* Holy
+* Shadow
+* Physical
+* Ranged
+
+Let <img src="https://latex.codecogs.com/svg.image?W" title="https://latex.codecogs.com/svg.image?W" /> be a vector space in which the basis vectors are representative of these damage categories. Meaning that any player has a attack vector <img src="https://latex.codecogs.com/svg.image?\textbf{a}\in&space;W" title="https://latex.codecogs.com/svg.image?\textbf{a}\in W" /> and defense vector <img src="https://latex.codecogs.com/svg.image?\textbf{d}\in&space;W" title="https://latex.codecogs.com/svg.image?\textbf{d}\in W" />. These stat lines will come from our only modification to the game which is that all gear in the game now has some type of elemental stats assigned to it.
 
 
-<img src="https://latex.codecogs.com/svg.image?\block&space;x^2&space;&plus;&space;y^2&space;=&space;z^2" class="centerImage">
-
-
+<img src="/unamed.png"/>
 
 [Jekyll](http://jekyllrb.com)
 
