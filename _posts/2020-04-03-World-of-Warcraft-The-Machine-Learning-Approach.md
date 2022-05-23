@@ -47,7 +47,19 @@ In World of Warcraft classes can do different types of damage they are:
 * Physical
 * Ranged
 
-Let <img src="https://latex.codecogs.com/svg.image?W" title="https://latex.codecogs.com/svg.image?W" /> be a vector space in which the basis vectors are representative of these damage categories. Meaning that any player has a attack vector <img src="https://latex.codecogs.com/svg.image?\textbf{a}\in&space;W" title="https://latex.codecogs.com/svg.image?\textbf{a}\in W" /> and defense vector <img src="https://latex.codecogs.com/svg.image?\textbf{d}\in&space;W" title="https://latex.codecogs.com/svg.image?\textbf{d}\in W" />. These stat lines will come from our only modification to the game which is that all gear in the game now has some type of elemental stats assigned to it.
+Let <img src="https://latex.codecogs.com/svg.image?W" title="https://latex.codecogs.com/svg.image?W" /> be a vector space in which the basis vectors are representative of these damage categories. Meaning that any player has a attack vector <img src="https://latex.codecogs.com/svg.image?\textbf{a}\in&space;W" title="https://latex.codecogs.com/svg.image?\textbf{a}\in W" /> and defense vector <img src="https://latex.codecogs.com/svg.image?\textbf{d}\in&space;W" title="https://latex.codecogs.com/svg.image?\textbf{d}\in W" />. These stat lines will come from our only modification to the game which is that all gear in the game now has some type of elemental stats assigned to it. It is also important to mention that the components to these vectors all add up to 1.
+
+### Simulation
+
+We keep the simulation very simple. We create a boss and a raid. A raid being the summation of many characters attack and defense vectors. First the boss will hit the raid until its health points are less than zero then the raid will hit the boss until its health points are less than zero. Whoever took more hits to kill its opponent loses.
+
+Damage is taken by subtracting the attack vector from the defense vector. Each coordinate of the output vector of this subtraction is added up and taken away from the health points.
+
+### Raid Testing
+
+
+
+
 
 
 <img src="/unamed.png"/>
