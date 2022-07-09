@@ -34,7 +34,6 @@ For each class different stats are necessary to perform. For example, a Mage’s
 
 DPS = f(player ability, amor stats)
 
-What is important about f is that it is a many-to-one function meaning that a warrior and a mage will have very different armor stats and varying player ability, but they can do the same DPS. 
 
 DPS is important and this vector space is important to our solution to cybersocialized gamers, but it is lacking something. Player’s stats are important to the lore of the game, since identity of the player's classes is based on their stats, changing these on a whim, or equalizing them, would make the choices players make in their character creation pointless. We really can’t be creative and change things up here because then everybody can be anything and effectively nothing.
 
