@@ -20,46 +20,45 @@ The game that this solution is intended for is for the legendary World of Warcra
 
 Let’s talk about World of Warcraft and its cybersocial situation. World of Warcraft was released as an enormous place for players to explore, fight, make friends, and team up to defeat enemies that stood 50 feet tall. The world was detailed, you would spend years learning the lore from the variety of different races of creatures all with your friends you had made over the internet. For some, this may have been the first time where they met a true friend over the internet. This popularity spun out of control. Millions of players from all of the world joined together to defeat enemies of The Alliance or Horde to collect powerful weapons and armor. The collection of this arsenal took months, guilds of players were created to defeat the raid bosses. Which took, in many cases, hundreds of tries consisting of very coordinated efforts of dozens of players representing months of hard work just to defeat one. This is when games were fun, or at least, this is the time where many gamers remember their favorite games being fun.
 
-Back then very small internet forums were made for the most dedicated players to share secrets about how to have the best try at defeating a raid boss. Little gems of advice found in the nooks of the internet. Years would pass suddenly Reddit and Youtube were created and there was now a somewhat standard place for the community to interact. 
+Back then, very small internet forums were made for the most dedicated players to share secrets about how to have the best try at defeating a raid boss. Little gems of advice found in the nooks of the internet. Later, social media created standard places for the community to interact, and boy did the community interact.
 
-And boy did the community interact, now there are data science dashboards that show your live performance of your character, simulations that show you exactly which spells to cast in real time, data miners get gameplay clues about patches and expansions that haven’t even been released, and races to see who can publish the first raid boss guide. Games in the past weren’t more fun, they were just not trivial.
+Now there are data science dashboards that show your live performance of your character, simulations that show you exactly which spells to cast in real time, data miners get gameplay clues about patches and expansions that haven’t even been released, and youtube creators race to see who will make the best boss fight guide. Games in the past weren’t more fun, they just weren’t being played for you.
 
-How can we get the bosses to do equivalent cybersocial optimization about the gamers? This way we can keep all the fun community interactions and counter cybersocial optimization.
+How can foes in World of Warcraft do equivalent cybersocial optimization about the gamers? If this were possible the community could grow and interact as much as they would like and the game would be immunized from them.
+
+# Let’s Make Some Data
 
 In World of Warcraft, to become more powerful, every player goes on a quest to gain more powerful weapons and more protective armor. Players have a choice of a class (Mage, Warrior, Paladin, etc…) and each class has multiple specializations but all of their goals remain the same. Get the best items, which give the best stats, and use them to get the next best items and stats – until you are ready to fight the raid bosses.
 
-[PICTURE OF THE STATS OF A CHARACTER]
 
-For each class different stats are necessary to perform. For example, a Mage’s fireball spell is not based on the strength stat, in fact none of the Mage abilities use the strength stat so you can imagine a mage won’t look for items with strength. So you have all of these stats, and each class has a set of functions (spells) that use these stats as parameters to figure out how much damage you do to your enemies. This damage output is usually measured by the community as a player's DPS (damage per second). DPS is a more true measurement of player skill, because it values both player power from weapons and armor, but then their ability to cast the right spells at the right time. Or let’s just say:
+In combat of world of warcraft a player utilizes the armor and weapons they have obtained in order to survive. These statistics from their gear help them do more damage and protect themselves from damage, however, the arsenal of spells each player character has allows them to augment their ability to do damage and protect themselves.
 
-DPS = f(player ability, amor stats)
+Player’s stats are important to the lore of the game, since identity of the player's classes is based on their stats, changing these on a whim, or equalizing them, would make the choices players make in their character creation pointless. We really can’t be creative and change things up here because then everybody can be anything and effectively nothing.
 
-
-DPS is important and this vector space is important to our solution to cybersocialized gamers, but it is lacking something. Player’s stats are important to the lore of the game, since identity of the player's classes is based on their stats, changing these on a whim, or equalizing them, would make the choices players make in their character creation pointless. We really can’t be creative and change things up here because then everybody can be anything and effectively nothing.
-
-Along with affecting a player's DPS; armor affects a player's ability to mitigate damage from enemies. Higher armor rating increases a player’s defensive abilities.
+For each class different stats are necessary to perform. A Mage’s fireball spell is not based on the strength stat, in fact none of the Mage abilities use the strength stat so you can imagine a mage won’t look for items with strength. So you have all of these stats, and each class has a set of functions (spells) that use these stats as parameters to figure out how much damage you do to your enemies. This damage output is usually measured by the community as a player's DPS (damage per second). DPS is a more true measurement of player skill, because it values both player power from weapons and armor, but then their ability to cast the right spells at the right time. DPS has a twin analytic more about defense, we will call it Defense Ability. Defense Ability like DPS is based on the armor that a player is wearing but also the players ability to cast spells to help mitigate damage.
 
 Back to the World of Warcraft. It’s big. Sometimes you’re fighting in a place called the Firelands, and sometimes you’re underwater fighting the Naga. All have beautiful artistic themes and the weapons and armor that drop there all have some themed visual presentation. Let’s put this geographical theme to use. 
 
-Fire, Frost, Holy, Shadow, Physical, Arcane, Nature are a pretty good set of themes that players fight in, but also are the themes of their classes. Paladins and Priests are students of the light, Mages study fire, frost, and the arcane. Druid’s fight with the power of nature, there are more classes but you get the point.
-
-Additionally to the DPS and armor rating of a player, let’s add another vector space that represents what themed armor the player has on. Called the Elemental Vector Space. Each vector in the elemental vector space will be normalized and each value in the vector will add up to one. Every player will have two elemental vectors, one based on their armor called the defense vector and one for the DPS called the attack vector considering the elemental theme of the weapons a player has.
+Fire, Frost, Holy, Shadow, Arcane, Nature are a pretty good set of themes that players fight in, but also are the themes of their classes. Paladins and Priests are students of the light, Mages study fire, frost, and the arcane. Druid’s fight with the power of nature, there are more classes but you get the point.
 
 [PICTURE OF THE SIDE BY SIDE STATS]
 
-When the DPS or armor rating is multiplied with the elemental vector space we have a vector that shows us the origin of the DPS and defensive capabilities of that player. Maybe a player who is a warrior loves the fire themed areas then their characters swords would glow with fire dealing more fire DPS or a paladin enjoyed the theme of the crypts and the undead and now their prayers worship a shadow demon.
+Additionally to the DPS and armor rating of a player, let’s add another vector space that represents what themed armor the player has on. Called the Elemental Vector Space. Each vector in the elemental vector space will be normalized and summing across the elements of the vector results in one. Every player will have two elemental vectors, one based on their armor called the defense vector and one for the DPS called the attack vector considering the elemental theme of the weapons a player has. To calculate these vectors we will multiply the DPS against the attack elemental vector and the armor rating against the defense elemental vector outputting a distribution of DPS and armor rating across the elements listed previously.
 
-Alright pre-algorithm around up:
-We have talked about how players do more DPS and protect themselves from damage, it is a mix of skill and a statline coupled to their class
+[DPS * vector equations]
+
+
+This way, a player who is a warrior loves the fire themed areas then their characters swords would glow with fire dealing more fire DPS or a paladin enjoyed the theme of the crypts and the undead and now their prayers worship a shadow demon.
+
+Alright pre-algorithm round up:
+We have talked about DPS and armor rating which are scalar values that grow as players level up and get better armor and improve their skills at the game.
 We have introduced the elemental vector space which is a statistical representation of where the players have been adventuring. Giving their DPS and armor that they improve over their adventure an “elemental theme” based on the armor they are currently wearing.
 Multiplying the elemental vector and the DPS scalar gives us a vector where every element of the vector is the portion of the total DPS that a player does with that element. Same with the armor rating scalar. 
 We will call the resultant vector of the DPS multiplied by the elemental vector the ‘attack vector’ and the armor rating scalar multiplied by the elemental vector the ‘defense vector’.
 
-Multiplying our elemental vector and our DPS scalar spreads the DPS of the player across the themes the player is wearing gear from. This gives the player autonomy on where the DPS is assigned. Want more fire damage? Go to a zone of the world that is fire themed. Want to defend well against shadow damage but deal nature damage? Go to a crypt for your armor and go to a jungle to get your weapons.
-
 Developing the algorithm
 
-To get the boss to counter cybersocial optimization we want to make a crude simulation of what an encounter with a raid boss is for players. So adding the attack vector of a players together we get a raid. A raid and a boss will exchange blows and whoever takes more turns to kill the other loses. A raid will attack with its attack vector and the boss will defend with its defense vector. The two vectors are subtracted elementwise and any positive value remaining is summed together to represent the total damage done to the boss every turn, vise versa. To obtain a raid’s collective attack and defense vector we will generate a random vector, where elements sum together to be one and multiply it by the raid’s collective DPS and armor rating.
+To get the boss to counter cybersocial optimization we want to make a crude simulation of what an encounter with a raid boss is for players. Adding the attack vector of players together we get a raid. A raid and a boss will exchange blows and whoever takes more turns to kill the other loses. A raid will attack with its attack vector and the boss will defend with its defense vector. The two vectors are subtracted elementwise and any positive value remaining is summed together to represent the total damage done to the boss every turn, vise versa. To obtain a raid’s collective attack and defense vector we will generate a random vector, where elements sum together to be one and multiply it by the raid’s collective DPS and armor rating.
 
 To show cybersocial optimization we will initialize 200 raids to fight the boss and add a bias term to half of the vectors, creating a cluster  representing those who are implementing some dominant strategy on the many internet forums. After a PCA this is what it looks like.
 
@@ -96,9 +95,11 @@ Random initialization favors raids: Boss Score: 1611 Raid Score: 389
 We see that with the sampling from the inside of an n-sphere our boss is able to beat not just the cybersocial optimization but a good amount of the raids not participating in the cybersocial optimization. Which is good, our goal was to beat the cybersocial players and make an engaging gameplay mechanic for everyone. The n-sphere addition completes that goal!
 
 Algorithm Summary
-Players explore the world to obtain armor and weapons that reflects the theme of the part of the world them obtained it
+Players explore the world to obtain armor and weapons that reflect the theme of the part of the world they obtained effectively choosing what their elemental stat line looks like.
 The KMeans enabled boss clusters the players and discovers a concentrated clustering of players (most likely due to some cybersocial optimization) using newly formed attack and defense vectors derived from the new elemental stat line.
 The boss then samples a point within the n-sphere centered at the centroid of the most concentrated cluster and makes that point its new attack and defense vectors.
+
+
 
 
 [Jekyll](http://jekyllrb.com)
