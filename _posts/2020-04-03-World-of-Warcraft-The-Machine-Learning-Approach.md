@@ -1,7 +1,6 @@
 ---
 layout: post
 title: 'World of Warcraft: The Machine Learning Approach'
-thumbnail: "_posts\thumb.jpg"
 ---
 
 <style type="text/css">
@@ -30,10 +29,11 @@ Now there are data science dashboards that show your live performance of your ch
 
 How can foes in World of Warcraft do equivalent cybersocial optimization about the gamers? If this were possible the community could grow and interact as much as they would like and the game would be immunized from them.
 
-# Let’s Make Some Data
+### Let’s Make Some Data
 
 In World of Warcraft, to become more powerful, every player goes on a quest to gain more powerful weapons and more protective armor. Players have a choice of a class (Mage, Warrior, Paladin, etc…) and each class has multiple specializations but all of their goals remain the same. Get the best items, which give the best stats, and use them to get the next best items and stats – until you are ready to fight the raid bosses.
 
+<img src="stats.png" alt="Base Stats">
 
 In combat of world of warcraft a player utilizes the armor and weapons they have obtained in order to survive. These statistics from their gear help them do more damage and protect themselves from damage, however, the arsenal of spells each player character has allows them to augment their ability to do damage and protect themselves.
 
@@ -60,7 +60,7 @@ We have introduced the elemental vector space which is a statistical representat
 Multiplying the elemental vector and the DPS scalar gives us a vector where every element of the vector is the portion of the total DPS that a player does with that element. Same with the armor rating scalar. 
 We will call the resultant vector of the DPS multiplied by the elemental vector the ‘attack vector’ and the armor rating scalar multiplied by the elemental vector the ‘defense vector’.
 
-Developing the algorithm
+#### Developing the algorithm
 
 To get the boss to counter cybersocial optimization we want to make a crude simulation of what an encounter with a raid boss is for players. Adding the attack vector of players together we get a raid. A raid and a boss will exchange blows and whoever takes more turns to kill the other loses. A raid will attack with its attack vector and the boss will defend with its defense vector. The two vectors are subtracted elementwise and any positive value remaining is summed together to represent the total damage done to the boss every turn, vise versa. To obtain a raid’s collective attack and defense vector we will generate a random vector, where elements sum together to be one and multiply it by the raid’s collective DPS and armor rating.
 
