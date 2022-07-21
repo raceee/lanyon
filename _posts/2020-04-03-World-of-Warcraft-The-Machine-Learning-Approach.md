@@ -1,15 +1,7 @@
 ---
 layout: post
 title: 'World of Warcraft: The Machine Learning Approach'
-thumbnail: "\public\thumb.jpg"
 ---
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
-
 
 Lot’s of gamers that were brought up in my generation are questioning if games are still fun or if their enjoyment is nostalgia that we are trying to relive. Today’s oeuvre is this blog’s first, and a specific solution to an observation I have had that I am going to name cybersocial optimization. 
 
