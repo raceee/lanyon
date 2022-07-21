@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'World of Warcraft: The Machine Learning Approach'
-image: _posts\thumb.jpg
+thumbnail: "_posts\thumb.jpg"
 ---
 
 <style type="text/css">
