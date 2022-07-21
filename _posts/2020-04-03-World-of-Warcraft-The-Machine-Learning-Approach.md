@@ -33,10 +33,11 @@ How can foes in World of Warcraft do equivalent cybersocial optimization about t
 
 In World of Warcraft, to become more powerful, every player goes on a quest to gain more powerful weapons and more protective armor. Players have a choice of a class (Mage, Warrior, Paladin, etc…) and each class has multiple specializations but all of their goals remain the same. Get the best items, which give the best stats, and use them to get the next best items and stats – until you are ready to fight the raid bosses.
 
-<img src="stats.png" alt="Base Stats">
-
 In combat of world of warcraft a player utilizes the armor and weapons they have obtained in order to survive. These statistics from their gear help them do more damage and protect themselves from damage, however, the arsenal of spells each player character has allows them to augment their ability to do damage and protect themselves.
-
+<figure>
+<img src="_posts\stats.png" alt="Base Stats">
+<figcaption>A representation of a character with stats shown
+</figure>
 Player’s stats are important to the lore of the game, since identity of the player's classes is based on their stats, changing these on a whim, or equalizing them, would make the choices players make in their character creation pointless. We really can’t be creative and change things up here because then everybody can be anything and effectively nothing.
 
 For each class different stats are necessary to perform. A Mage’s fireball spell is not based on the strength stat, in fact none of the Mage abilities use the strength stat so you can imagine a mage won’t look for items with strength. So you have all of these stats, and each class has a set of functions (spells) that use these stats as parameters to figure out how much damage you do to your enemies. This damage output is usually measured by the community as a player's DPS (damage per second). DPS is a more true measurement of player skill, because it values both player power from weapons and armor, but then their ability to cast the right spells at the right time. DPS has a twin analytic more about defense, we will call it Defense Ability. Defense Ability like DPS is based on the armor that a player is wearing but also the players ability to cast spells to help mitigate damage.

@@ -12,6 +12,23 @@
     {% endif %}
   </title>
 
+   <style>
+    figure {
+      border: 0px #cccccc solid;
+      padding: 4px;
+      margin: auto;
+    }
+    
+    figcaption {
+      background-color: white;
+      color: black;
+      font-style: italic;
+      padding: 2px;
+      text-align: center;
+    }
+    </style>
+
+
   {% if page.url and site.baseurl %}
   <link rel="canonical" href="{{ page.url | absolute_url }}">
   {% endif %}
