@@ -14,6 +14,8 @@ title: 'World of Warcraft: The Machine Learning Approach'
 
 Lot’s of gamers that were brought up in my generation are questioning if games are still fun or if their enjoyment is nostalgia that we are trying to relive. Today’s oeuvre is this blog’s first, and a specific solution to an observation I have had that I am going to name cybersocial optimization. 
 
+<p><span class="math display">\[y = \frac{a}{b} + c^2 + d\]</span></p>
+
 I think that gamers are experiencing cybersocial optimization of their gaming experience, this post will be a technical solution to this social phenomenon.
 
 The game that this solution is intended for is for the legendary World of Warcraft released in 2004, but the philosophy behind it could be applied other places.
