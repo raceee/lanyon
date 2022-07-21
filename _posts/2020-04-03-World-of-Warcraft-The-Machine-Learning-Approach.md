@@ -36,7 +36,7 @@ In World of Warcraft, to become more powerful, every player goes on a quest to g
 In combat of world of warcraft a player utilizes the armor and weapons they have obtained in order to survive. These statistics from their gear help them do more damage and protect themselves from damage, however, the arsenal of spells each player character has allows them to augment their ability to do damage and protect themselves.
 <figure>
 <img src="_posts\stats.png" alt="Base Stats">
-<figcaption>A representation of a character with stats shown
+<figcaption>A representation of a character with stats shown</figcaption>
 </figure>
 Player’s stats are important to the lore of the game, since identity of the player's classes is based on their stats, changing these on a whim, or equalizing them, would make the choices players make in their character creation pointless. We really can’t be creative and change things up here because then everybody can be anything and effectively nothing.
 
