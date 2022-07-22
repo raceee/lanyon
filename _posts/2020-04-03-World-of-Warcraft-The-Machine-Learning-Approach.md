@@ -19,37 +19,47 @@ Now there are data science dashboards that show your live performance of your ch
 
 How can foes in World of Warcraft do equivalent cybersocial optimization about the gamers? If this were possible the community could grow and interact as much as they would like and the game would be immunized from them.
 
-### Let’s Make Some Data
+### The Old Stats
 
 In World of Warcraft, to become more powerful, every player goes on a quest to gain more powerful weapons and more protective armor. Players have a choice of a class (Mage, Warrior, Paladin, etc…) and each class has multiple specializations but all of their goals remain the same. Get the best items, which give the best stats, and use them to get the next best items and stats – until you are ready to fight the raid bosses.
 
-In combat of world of warcraft a player utilizes the armor and weapons they have obtained in order to survive. These statistics from their gear help them do more damage and protect themselves from damage, however, the arsenal of spells each player character has allows them to augment their ability to do damage and protect themselves.
+In combat of world of warcraft a player utilizes the armor and weapons they have obtained in order to survive. These statistics from their gear help them do more damage and protect themselves from damage, however, the arsenal of spells each player character has allows them to augment their ability to do damage and protect themselves. For the sake of this post we will call a players ability to do damage DPS (damage per second) and their ability to protect themselves Defense Ability. DPS and Defense Ability are postive real number values that are determined by the players skill and the stats on their armor.
+
 <figure>
 <img src="\public\stats.png" alt="Base Stats" class="center">
 <figcaption>A representation of a character with stats shown</figcaption>
 </figure>
-Player’s stats are important to the lore of the game, since identity of the player's classes is based on their stats, changing these on a whim, or equalizing them, would make the choices players make in their character creation pointless. We really can’t be creative and change things up here because then everybody can be anything and effectively nothing.
 
-For each class different stats are necessary to perform. A Mage’s fireball spell is not based on the strength stat, in fact none of the Mage abilities use the strength stat so you can imagine a mage won’t look for items with strength. So you have all of these stats, and each class has a set of functions (spells) that use these stats as parameters to figure out how much damage you do to your enemies. This damage output is usually measured by the community as a player's DPS (damage per second). DPS is a more true measurement of player skill, because it values both player power from weapons and armor, but then their ability to cast the right spells at the right time. DPS has a twin analytic more about defense, we will call it Defense Ability. Defense Ability like DPS is based on the armor that a player is wearing but also the players ability to cast spells to help mitigate damage.
+Player's stats are restricted by their class. A mage will never have a high strength stat and a mage player needs to rely on a warrior player in order to deal with close hand to hand combat. This inspires comradery and thus we can't mess with this od stat line to much. If we did, we could ruin the delicate balance between classes and their need for each other. So, the old stays.
 
-Back to the World of Warcraft. It’s big. Sometimes you’re fighting in a place called the Firelands, and sometimes you’re underwater fighting the Naga. All have beautiful artistic themes and the weapons and armor that drop there all have some themed visual presentation. Let’s put this geographical theme to use. 
+XXXXXXXXXXXXXXXX For each class different stats are necessary to perform. A Mage’s fireball spell is not based on the strength stat, in fact none of the Mage abilities use the strength stat so you can imagine a mage won’t look for items that would increase the strength stat. So you have all of these stats, and each class has a set of functions (spells) that use these stats as parameters to figure out how much damage you do to your enemies. This damage output is usually measured by the community as a player's DPS (damage per second). DPS is a more true measurement of player skill, because it values both player power from weapons and armor, but then their ability to cast the right spells at the right time. DPS has a twin analytic more about defense, we will call it Defense Ability. Defense Ability like DPS is based on the armor that a player is wearing but also the players ability to cast spells to help mitigate damage. XXXXXXXXXX
+
+
+
+#### New Stat Line
+World of Warcraft is big. Sometimes you’re fighting in a place called the Firelands, and sometimes you’re underwater fighting the Naga. All have beautiful artistic themes and the weapons and armor that drop there all have some themed visual presentation. Let’s put this geographical theme to use. 
 
 Fire, Frost, Holy, Shadow, Arcane, Nature are a pretty good set of themes that players fight in, but also are the themes of their classes. Paladins and Priests are students of the light, Mages study fire, frost, and the arcane. Druid’s fight with the power of nature, there are more classes but you get the point.
 
-[PICTURE OF THE SIDE BY SIDE STATS]
+Additionally to the DPS and armor rating of a player, let’s add another vector space that represents what themed armor the player has on. Called the Elemental Vector Space. Each vector in the elemental vector space will be normalized and summing across the elements of the vector results in one. Each basis vector in this space will represent the elements mentioned previously.
 
-Additionally to the DPS and armor rating of a player, let’s add another vector space that represents what themed armor the player has on. Called the Elemental Vector Space. Each vector in the elemental vector space will be normalized and summing across the elements of the vector results in one. Every player will have two elemental vectors, one based on their armor called the defense vector and one for the DPS called the attack vector considering the elemental theme of the weapons a player has. To calculate these vectors we will multiply the DPS against the attack elemental vector and the armor rating against the defense elemental vector outputting a distribution of DPS and armor rating across the elements listed previously.
+<figure>
+<img src="\public\unnamed.png" alt="More Stats" class="center">
+<figcaption>Side by side of suggested stats</figcaption>
+</figure>
 
-[DPS * vector equations]
+To frame our testing later we will assign two elemental vectors to each player. One for their currently equipped weapons and one for their equipped armor respectively named "elemental attack" and "elemental defense". If we multiply the DPS and Defensive ability by their corresponding elemental vectors we are given a vector that represents the distribution of DPS or Defensive ability across the different elements in the game. We will call these vectors the "total attack" and "total defense" vectors and they are the ones that we will focus on for the rest of the paper:
 
+<p><span class="math display">\[total_attack = DPS * elemental_attack\]</span></p>
+<p><span class="math display">\[total_defense = Defense_ability * elemental_defense\]</span></p>
 
 This way, a player who is a warrior loves the fire themed areas then their characters swords would glow with fire dealing more fire DPS or a paladin enjoyed the theme of the crypts and the undead and now their prayers worship a shadow demon.
 
 Alright pre-algorithm round up:
-We have talked about DPS and armor rating which are scalar values that grow as players level up and get better armor and improve their skills at the game.
-We have introduced the elemental vector space which is a statistical representation of where the players have been adventuring. Giving their DPS and armor that they improve over their adventure an “elemental theme” based on the armor they are currently wearing.
-Multiplying the elemental vector and the DPS scalar gives us a vector where every element of the vector is the portion of the total DPS that a player does with that element. Same with the armor rating scalar. 
-We will call the resultant vector of the DPS multiplied by the elemental vector the ‘attack vector’ and the armor rating scalar multiplied by the elemental vector the ‘defense vector’.
+1. We have talked about DPS and Defensive Ability which are positive real values that grow as players level up and get better armor and improve their skills at the game. 
+2. We have suggested an additional vector space called the "Elemental Vector Space" that gives us an idea from which elemntal power weapons and armor come from.
+3. Multiplying DPS/Defensive Ability and the elemental attack/defense vectors give us a vector showing the type of DPS or type of defensive power each player has. This vectors are called "total attack/defense vectors" and these vectors are what we will be focusing on for the algorithm testing.
+
 
 #### Developing the algorithm
 
