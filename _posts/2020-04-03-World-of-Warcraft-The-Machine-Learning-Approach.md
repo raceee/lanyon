@@ -50,8 +50,8 @@ Additionally to the DPS and armor rating of a player, let’s add another vector
 
 To frame our testing later we will assign two elemental vectors to each player. One for their currently equipped weapons and one for their equipped armor respectively named "elemental attack" and "elemental defense". If we multiply the DPS and Defensive ability by their corresponding elemental vectors we are given a vector that represents the distribution of DPS or Defensive ability across the different elements in the game. We will call these vectors the "total attack" and "total defense" vectors and they are the ones that we will focus on for the rest of the paper:
 
-<p><span class="math display">\[total_attack = DPS * elemental_attack\]</span></p>
-<p><span class="math display">\[total_defense = Defense_ability * elemental_defense\]</span></p>
+<p><span class="math display">\[total\attack = DPS * elemental\attack\]</span></p>
+<p><span class="math display">\[total\defense = Defense\Ability * elemental\defense\]</span></p>
 
 This way, a player who is a warrior loves the fire themed areas then their characters swords would glow with fire dealing more fire DPS or a paladin enjoyed the theme of the crypts and the undead and now their prayers worship a shadow demon.
 
@@ -63,7 +63,11 @@ Alright pre-algorithm round up:
 
 #### Developing the algorithm
 
-To get the boss to counter cybersocial optimization we want to make a crude simulation of what an encounter with a raid boss is for players. Adding the attack vector of players together we get a raid. A raid and a boss will exchange blows and whoever takes more turns to kill the other loses. A raid will attack with its attack vector and the boss will defend with its defense vector. The two vectors are subtracted elementwise and any positive value remaining is summed together to represent the total damage done to the boss every turn, vise versa. To obtain a raid’s collective attack and defense vector we will generate a random vector, where elements sum together to be one and multiply it by the raid’s collective DPS and armor rating.
+To get the boss to counter cybersocial optimization we want to make a crude simulation of what an encounter with a raid boss is for players. Adding the attack vector of players together we get a raid. A raid and a boss will exchange blows and whoever takes more turns to kill the other loses. 
+
+A raid will attack with its total attack vector and the boss will defend with its total defense vector. The two vectors are subtracted elementwise and any positive value remaining is summed together to represent the total damage done to the boss every turn, vise versa. 
+
+To obtain a raid’s collective attack and defense vector we will generate a random vector, where elements sum together to be one and multiply it by the raid’s collective DPS and armor rating.
 
 To show cybersocial optimization we will initialize 200 raids to fight the boss and add a bias term to half of the vectors, creating a cluster  representing those who are implementing some dominant strategy on the many internet forums. After a PCA this is what it looks like.
 
