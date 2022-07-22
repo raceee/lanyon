@@ -38,14 +38,14 @@ Fire, Frost, Holy, Shadow, Arcane, Nature are a pretty good set of themes that p
 Additionally to the DPS and armor rating of a player, let’s add another vector space that represents what themed armor the player has on. Called the Elemental Vector Space. Each vector in the elemental vector space will be normalized and summing across the elements of the vector results in one. Each basis vector in this space will represent the elements mentioned previously.
 
 <figure>
-<img src="\public\elemental_stats_comp.jpeg" alt="More Stats" class="center">
+<img src="\public\elemental_stats_comp.jpg" alt="More Stats" class="center">
 <figcaption>Side by side of suggested stats</figcaption>
 </figure>
 
 To frame our testing later we will assign two elemental vectors to each player. One for their currently equipped weapons and one for their equipped armor respectively named "elemental attack" and "elemental defense". If we multiply the DPS and Defensive ability by their corresponding elemental vectors we are given a vector that represents the distribution of DPS or Defensive ability across the different elements in the game. We will call these vectors the "total attack" and "total defense" vectors and they are the ones that we will focus on for the rest of the paper:
 
-<p><span class="math display">\[total\attack = DPS * elemental\attack\]</span></p>
-<p><span class="math display">\[total\defense = Defense\Ability * elemental\defense\]</span></p>
+<p><span class="math display">\[\text{total attack} = \text{DPS} * \text{elemental attack}\]</span></p>
+<p><span class="math display">\[\text{total defense} = \text{Defense Ability} * \text{elemental defense}\]</span></p>
 
 This way, a player who is a warrior loves the fire themed areas then their characters swords would glow with fire dealing more fire DPS or a paladin enjoyed the theme of the crypts and the undead and now their prayers worship a shadow demon.
 
