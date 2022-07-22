@@ -36,7 +36,7 @@ XXXXXXXXXXXXXXXX For each class different stats are necessary to perform. A Mage
 
 
 
-#### New Stat Line
+### New Stat Line
 World of Warcraft is big. Sometimes you’re fighting in a place called the Firelands, and sometimes you’re underwater fighting the Naga. All have beautiful artistic themes and the weapons and armor that drop there all have some themed visual presentation. Let’s put this geographical theme to use. 
 
 Fire, Frost, Holy, Shadow, Arcane, Nature are a pretty good set of themes that players fight in, but also are the themes of their classes. Paladins and Priests are students of the light, Mages study fire, frost, and the arcane. Druid’s fight with the power of nature, there are more classes but you get the point.
@@ -61,45 +61,53 @@ Alright pre-algorithm round up:
 3. Multiplying DPS/Defensive Ability and the elemental attack/defense vectors give us a vector showing the type of DPS or type of defensive power each player has. This vectors are called "total attack/defense vectors" and these vectors are what we will be focusing on for the algorithm testing.
 
 
-#### Developing the algorithm
+### Developing the algorithm
 
 To get the boss to counter cybersocial optimization we want to make a crude simulation of what an encounter with a raid boss is for players. Adding the attack vector of players together we get a raid. A raid and a boss will exchange blows and whoever takes more turns to kill the other loses. 
 
 A raid will attack with its total attack vector and the boss will defend with its total defense vector. The two vectors are subtracted elementwise and any positive value remaining is summed together to represent the total damage done to the boss every turn, vise versa. 
 
-To obtain a raid’s collective attack and defense vector we will generate a random vector, where elements sum together to be one and multiply it by the raid’s collective DPS and armor rating.
+To obtain a raid’s collective attack and defense vector we will generate a random attack/defense elemental vectors, where elements sum together to be one and multiply it by the raid’s collective DPS and Defensive Ability resulting in total attack and total defense vectors
 
-To show cybersocial optimization we will initialize 200 raids to fight the boss and add a bias term to half of the vectors, creating a cluster  representing those who are implementing some dominant strategy on the many internet forums. After a PCA this is what it looks like.
+To show cybersocial optimization we will initialize 200 raids to fight the boss and add a bias term to half of the vectors, creating a cluster representing those who are implementing some dominant strategy on the many internet forums. After a PCA this is what it looks like.
 
-[SHOW 2D VIEW]
+<figure>
+<img src="\public\raid_attack_cluster.png" alt="a cluster" class="center">
+</figure>
 
 As you can see the cybersocial optimization is prevalent where the tightest concentration of raids are. Before we do any machine learning lets run this random initialization of the raids against a random initialization of the boss.
 
 When the boss has done no fitting we will track two scenarios, when the boss random initialization favors the boss and when the random initialization favors the raids, so here is the score.
 
-Random initialization favors boss: Boss Score: 1300 Raid Score: 700
-Random initialization favors raids: Boss Score: 855 Raid Score: 1145
+<b>Random initialization favors boss: Boss Score: 1300 Raid Score: 700</b>
+<b>Random initialization favors raids: Boss Score: 855 Raid Score: 1145</b>
 
 In the scatter plot shown above we see black centroids, derived from the KMeans algorithm, for each group we can calculate which group is the most concentrated. That group represents some sort of cybersocial optimization of an attack vector. If the boss sets that centroid as its defense vector it would hopefully maximize the mitigated damage incoming from the raid. Checking the scores we see these changes:
 
-Random initialization favors boss: Boss Score: 1031 Raid Score: 969
-Random initialization favors raids: Boss Score: 1022 Raid Score: 978
+<b>Random initialization favors boss: Boss Score: 1031 Raid Score: 969</b>
+<b>Random initialization favors raids: Boss Score: 1022 Raid Score: 978</b>
 
 The boss is winning the majority of the battles against the raids in both cases. We will fit the bosses attack vector along with its defense vector using the same method.
 
-Random initialization favors boss: Boss Score: 1004 Raid Score: 996
-Random initialization favors raids: Boss Score: 1008 Raid Score: 992
+<b>Random initialization favors boss: Boss Score: 1004 Raid Score: 996</b>
+<b>Random initialization favors raids: Boss Score: 1008 Raid Score: 992</b>
 
 Why does this number even out the more KMeans fitting we do? In our experiment we made 200 raids, 100 random ones and 100 biased ones representing the cybersocial optimized ones. So the boss is killing the optimized raids and being killed by those not following the cybersocial optimization. 
 
 New problem. If this game play mechanic was introduced to the game then most players would not have any interaction with it at all. If you are unaware of the cybersocial optimization of the game then all this complicated machine learning means nothing. There is another problem, World of Warcraft has many API’s that allow developers to make add-ons and analyze in-game statistics. If players who were serious about the cybersocial optimization create an add-on then they could know what the boss would fit next.
 
-So we need to create some variance that scrambles the attempts to make counter analytics and includes more players than just the ones that chase cybersocial optimization. To do this we will set the centroid of the KMeans cluster that is the most concentrated as the center of an n-sphere.
+So we need to create some variance that scrambles the attempts to make counter analytics and includes more players than just the ones that chase cybersocial optimization. To do this we will set the centroid of the KMeans cluster that is the most concentrated as the center of an n-sphere. We can generate Cartesian coordinates from the following:
 
-[block math]
+<p><span class="math display">\[x_1 = r cos(\phi_1 )\]</span></p>
+<p><span class="math display">\[x_2 = r sin(\phi_1 ) cos(\phi_2 )\]</span></p>
+<p><span class="math display">\[x_3 = r sin(\phi_1 ) sin(\phi_2 ) cos(\phi_3 )\]</span></p>
+<p><span class="math display">\[\dots\]</span></p>
+<p><span class="math display">\[x_{n-1} = r sin(\phi_1 ) \dots sin(\phi_{n-2} ) cos(\phi_{n-1} )\]</span></p>
+<p><span class="math display">\[x_{n} = r sin(\phi_1 ) \dots sin(\phi_{n-2} ) sin(\phi_{n-1} )\]</span></p>
 
-Random initialization favors boss: Boss Score: 1324 Raid Score: 676
-Random initialization favors raids: Boss Score: 1611 Raid Score: 389
+Once this n-sphere is generated we can sample a new total attack and total defense vector from with in it. Assigning those n-sphere'd sampled vectors and assigning them to the raid boss we have this turn out:
+<b>Random initialization favors boss: Boss Score: 1324 Raid Score: 676</b>
+<b>Random initialization favors raids: Boss Score: 1611 Raid Score: 389</b>
 
 We see that with the sampling from the inside of an n-sphere our boss is able to beat not just the cybersocial optimization but a good amount of the raids not participating in the cybersocial optimization. Which is good, our goal was to beat the cybersocial players and make an engaging gameplay mechanic for everyone. The n-sphere addition completes that goal!
 
