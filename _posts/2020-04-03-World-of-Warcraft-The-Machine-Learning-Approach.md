@@ -5,8 +5,6 @@ title: 'World of Warcraft: The Machine Learning Approach'
 
 Lot’s of gamers that were brought up in my generation are questioning if games are still fun or if their enjoyment is nostalgia that we are trying to relive. Today’s oeuvre is this blog’s first, and a specific solution to an observation I have had that I am going to name cybersocial optimization. 
 
-<p><span class="math display">\[y = \frac{a}{b} + c^2 + d\]</span></p>
-
 I think that gamers are experiencing cybersocial optimization of their gaming experience, this post will be a technical solution to this social phenomenon.
 
 The game that this solution is intended for is for the legendary World of Warcraft released in 2004, but the philosophy behind it could be applied other places.
@@ -32,10 +30,6 @@ In combat of world of warcraft a player utilizes the armor and weapons they have
 
 Player's stats are restricted by their class. A mage will never have a high strength stat and a mage player needs to rely on a warrior player in order to deal with close hand to hand combat. This inspires comradery and thus we can't mess with this od stat line to much. If we did, we could ruin the delicate balance between classes and their need for each other. So, the old stays.
 
-XXXXXXXXXXXXXXXX For each class different stats are necessary to perform. A Mage’s fireball spell is not based on the strength stat, in fact none of the Mage abilities use the strength stat so you can imagine a mage won’t look for items that would increase the strength stat. So you have all of these stats, and each class has a set of functions (spells) that use these stats as parameters to figure out how much damage you do to your enemies. This damage output is usually measured by the community as a player's DPS (damage per second). DPS is a more true measurement of player skill, because it values both player power from weapons and armor, but then their ability to cast the right spells at the right time. DPS has a twin analytic more about defense, we will call it Defense Ability. Defense Ability like DPS is based on the armor that a player is wearing but also the players ability to cast spells to help mitigate damage. XXXXXXXXXX
-
-
-
 ### New Stat Line
 World of Warcraft is big. Sometimes you’re fighting in a place called the Firelands, and sometimes you’re underwater fighting the Naga. All have beautiful artistic themes and the weapons and armor that drop there all have some themed visual presentation. Let’s put this geographical theme to use. 
 
@@ -44,7 +38,7 @@ Fire, Frost, Holy, Shadow, Arcane, Nature are a pretty good set of themes that p
 Additionally to the DPS and armor rating of a player, let’s add another vector space that represents what themed armor the player has on. Called the Elemental Vector Space. Each vector in the elemental vector space will be normalized and summing across the elements of the vector results in one. Each basis vector in this space will represent the elements mentioned previously.
 
 <figure>
-<img src="\public\unnamed.png" alt="More Stats" class="center">
+<img src="\public\elemental_stats_comp.jpeg" alt="More Stats" class="center">
 <figcaption>Side by side of suggested stats</figcaption>
 </figure>
 
@@ -106,6 +100,7 @@ So we need to create some variance that scrambles the attempts to make counter a
 <p><span class="math display">\[x_{n} = r sin(\phi_1 ) \dots sin(\phi_{n-2} ) sin(\phi_{n-1} )\]</span></p>
 
 Once this n-sphere is generated we can sample a new total attack and total defense vector from with in it. Assigning those n-sphere'd sampled vectors and assigning them to the raid boss we have this turn out:
+
 <b>Random initialization favors boss: Boss Score: 1324 Raid Score: 676</b>
 <b>Random initialization favors raids: Boss Score: 1611 Raid Score: 389</b>
 
