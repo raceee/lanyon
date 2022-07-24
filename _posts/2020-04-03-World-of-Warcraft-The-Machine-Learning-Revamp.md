@@ -3,7 +3,7 @@ layout: post
 title: 'World of Warcraft: The Machine Learning Revamp'
 ---
 
-TL;DR: Video games are being played on internet forums taking away from ingame experience. This experience is the value prop of a video game company. To avoid this "cybersocial optimization" of video games without embargoing the internet formus and communities we create a companion vector space to the original World of Warcraft character stats vector space and preform KMeans clustering, concentration analysis on those clusters, and n-sphere sampling to counter strategies developed by internet forums and communities.
+TL;DR: <em>Video games are being played on internet forums taking away from ingame experience. This experience is the value prop of a video game company. To avoid this "cybersocial optimization" of video games without embargoing the internet formus and communities we create a companion vector space to the original World of Warcraft character stats vector space and preform KMeans clustering, concentration analysis on those clusters, and n-sphere sampling to counter strategies developed by internet forums and communities.</em>
 
 Lot’s of gamers that were brought up in my generation are questioning if games are still fun or if their enjoyment is nostalgia that we are trying to relive. Today’s oeuvre is this blog’s first, and a specific solution to an observation I have had that I am going to name cybersocial optimization. 
 
