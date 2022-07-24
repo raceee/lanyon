@@ -37,8 +37,12 @@ In combat of World of Warcraft a player utilizes the armor and weapons they have
 Player's stats are restricted by their class. A mage will never have a high strength stat so a mage player needs to rely on a warrior player in order to deal with close hand to hand combat. This inspires comradery and thus we can't mess with this old stat line to much. If we did, we could ruin the delicate balance between classes and their need for each other. So, the old stays.
 
 ### New Stat Line
-World of Warcraft is big. Sometimes you’re fighting in a place called the Firelands, and sometimes you’re underwater fighting the Naga. All have beautiful artistic themes and the weapons and armor that drop there all have some themed visual presentation. Let’s put this geographical theme to use. 
+World of Warcraft is big. Sometimes you’re fighting in a place called the Firelands, and sometimes you’re underwater fighting the Naga. All have beautiful artistic themes and the weapons and armor that drop there all have some themed visual presentation. Let’s put this geographical theme to use.
 
+<figure>
+<img src="\public\frostfire.jpg" alt="More Stats" class="center">
+<figcaption>Side by side of suggested stats</figcaption>
+</figure>
 
 Fire, Frost, Holy, Shadow, Arcane, Nature are a pretty good set of themes that players fight in, but also are the themes of their classes. Paladins and Priests are students of the light, Mages study fire, frost, and the arcane. Druid’s fight with the power of nature, there are more classes but you get the point.
 
