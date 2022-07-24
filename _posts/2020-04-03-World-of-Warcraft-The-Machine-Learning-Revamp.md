@@ -39,14 +39,6 @@ Player's stats are restricted by their class. A mage will never have a high stre
 ### New Stat Line
 World of Warcraft is big. Sometimes you’re fighting in a place called the Firelands, and sometimes you’re underwater fighting the Naga. All have beautiful artistic themes and the weapons and armor that drop there all have some themed visual presentation. Let’s put this geographical theme to use. 
 
- <div class="row">
-  <div class="column">
-    <img src="570.jpg" alt="Fire" style="width:100%">
-  </div>
-  <div class="column">
-    <img src="2164.jpg" alt="Frost" style="width:100%">
-  </div>
-</div> 
 
 Fire, Frost, Holy, Shadow, Arcane, Nature are a pretty good set of themes that players fight in, but also are the themes of their classes. Paladins and Priests are students of the light, Mages study fire, frost, and the arcane. Druid’s fight with the power of nature, there are more classes but you get the point.
 
