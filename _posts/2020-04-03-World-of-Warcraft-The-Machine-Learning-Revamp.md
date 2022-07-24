@@ -3,6 +3,8 @@ layout: post
 title: 'World of Warcraft: The Machine Learning Approach'
 ---
 
+TL;DR: Video games are being played on internet forums taking away from ingame experience. This experience is the value prop of a video game company. To avoid this "cybersocial optimization" of video games without embargoing the internet formus and communities we create a companion vector space to the original World of Warcraft character stats vector space and preform KMeans clustering, concentration analysis on those clusters, and n-sphere sampling to counter strategies developed by internet forums and communities.
+
 Lot’s of gamers that were brought up in my generation are questioning if games are still fun or if their enjoyment is nostalgia that we are trying to relive. Today’s oeuvre is this blog’s first, and a specific solution to an observation I have had that I am going to name cybersocial optimization. 
 
 I think that gamers are experiencing cybersocial optimization of their gaming experience, this post will be a technical solution to this social phenomenon.
@@ -15,23 +17,36 @@ Back then, very small internet forums were made for the most dedicated players t
 
 Now there are data science dashboards that show your live performance of your character, simulations that show you exactly which spells to cast in real time, data miners get gameplay clues about patches and expansions that haven’t even been released, and youtube creators race to see who will make the best boss fight guide. Games in the past weren’t more fun, they just weren’t being played for you.
 
-How can foes in World of Warcraft do equivalent cybersocial optimization about the gamers? If this were possible the community could grow and interact as much as they would like and the game would be immunized from them.
+To make games fun again we need to immunize a video game from the community it creates. If this were possible the community could grow and interact as much as they would like without hurting the gameplay experience.
+
+How can foes in World of Warcraft counter cybersocial optimization? 
 
 ### The Old Stats
 
 In World of Warcraft, to become more powerful, every player goes on a quest to gain more powerful weapons and more protective armor. Players have a choice of a class (Mage, Warrior, Paladin, etc…) and each class has multiple specializations but all of their goals remain the same. Get the best items, which give the best stats, and use them to get the next best items and stats – until you are ready to fight the raid bosses.
 
-In combat of world of warcraft a player utilizes the armor and weapons they have obtained in order to survive. These statistics from their gear help them do more damage and protect themselves from damage, however, the arsenal of spells each player character has allows them to augment their ability to do damage and protect themselves. For the sake of this post we will call a players ability to do damage DPS (damage per second) and their ability to protect themselves Defense Ability. DPS and Defense Ability are postive real number values that are determined by the players skill and the stats on their armor.
+> Just to save you a google search, the stats that every peice of gear can have are the following: Strength, Agility, Intellect, Stamina, and Spirit.
+
+In combat of World of Warcraft a player utilizes the armor and weapons they have obtained in order to survive. These statistics from their gear help them do more damage and protect themselves from on coming damage, however, the arsenal of spells each player character has allows them to augment their ability to do damage and protect themselves. For the sake of this post we will call a players ability to do damage DPS (damage per second) and their ability to protect themselves Defense Ability. DPS and Defense Ability are postive real number values that are determined by the players skill and the stats on their armor parameterized by the stats coming from their weapon and armor.
 
 <figure>
 <img src="\public\stats.png" alt="Base Stats" class="center">
 <figcaption>A representation of a character with stats shown</figcaption>
 </figure>
 
-Player's stats are restricted by their class. A mage will never have a high strength stat and a mage player needs to rely on a warrior player in order to deal with close hand to hand combat. This inspires comradery and thus we can't mess with this od stat line to much. If we did, we could ruin the delicate balance between classes and their need for each other. So, the old stays.
+Player's stats are restricted by their class. A mage will never have a high strength stat so a mage player needs to rely on a warrior player in order to deal with close hand to hand combat. This inspires comradery and thus we can't mess with this old stat line to much. If we did, we could ruin the delicate balance between classes and their need for each other. So, the old stays.
 
 ### New Stat Line
 World of Warcraft is big. Sometimes you’re fighting in a place called the Firelands, and sometimes you’re underwater fighting the Naga. All have beautiful artistic themes and the weapons and armor that drop there all have some themed visual presentation. Let’s put this geographical theme to use. 
+
+ <div class="row">
+  <div class="column">
+    <img src="570.jpg" alt="Fire" style="width:100%">
+  </div>
+  <div class="column">
+    <img src="2164.jpg" alt="Frost" style="width:100%">
+  </div>
+</div> 
 
 Fire, Frost, Holy, Shadow, Arcane, Nature are a pretty good set of themes that players fight in, but also are the themes of their classes. Paladins and Priests are students of the light, Mages study fire, frost, and the arcane. Druid’s fight with the power of nature, there are more classes but you get the point.
 
