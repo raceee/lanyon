@@ -2,7 +2,11 @@
 layout: post
 title: 'World of Warcraft: The Machine Learning Revamp'
 ---
- 
+
+<figure>
+<img src="\public\wow_thumb.jpg" alt="thumb" class="center">
+</figure>
+
 TL;DR <em>When the community of a video game starts sharing dominant strategies, glitches, and guides around social media, game time is optimized, diminishing the fun of a game for the player, and lowering revenue for subscription based games like World of Warcraft. To avoid this “cybersocial optimization” of video games without embargoing the internet forums and communities, we create a companion vector space to the original World of Warcraft character stats vector space and perform KMeans clustering, concentration analysis on those clusters, and n-sphere sampling to counter strategies developed by internet forums and communities.</em>
 
 Lot’s of gamers that were brought up in my generation are questioning if games are still fun or if their enjoyment is nostalgia that we are trying to relive. Today’s oeuvre is this blog’s first, and a specific solution to an observation I have had that I am going to name cybersocial optimization.
