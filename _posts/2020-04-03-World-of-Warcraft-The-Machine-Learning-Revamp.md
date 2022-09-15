@@ -94,6 +94,90 @@ When the boss has done no fitting we will track two scenarios, when the random i
     </tr>
   </thead>
   <tfoot>
+      <td>No action taken</td>
+      <td>1300/2000</td>
+      <td>855/2000</td>
+    </tfoot>
+</table>
+
+ 
+In the scatter plot shown above we see black centroids, derived from the KMeans algorithm, for each group we can calculate which group is the most concentrated. That group represents some sort of cybersocial optimization of an attack vector. If the boss sets that centroid as its defense vector it would hopefully maximize the mitigated damage incoming from the raid. Checking the scores we see these changes:
+ 
+<table>
+  <thead>
+    <tr>
+      <th>Behavior</th>
+      <th>Random Favors Boss</th>
+      <th>Random Favors Raid </th>
+    </tr>
+  </thead>
+  <tfoot>
+      <td>Boss Fits Total Defense Vector</td>
+      <td>1031/2000</td>
+      <td>1022/2000</td>
+    </tfoot>
+  <tbody>
+    <tr>
+      <td>No action taken</td>
+      <td>1300/2000</td>
+      <td>855/2000</td>
+    </tr>
+  </tbody>
+</table>
+ 
+The boss is winning the majority of the battles against the raids in both cases. We will fit the bosses attack vector along with its defense vector using the same method.
+ 
+<table>
+  <thead>
+    <tr>
+      <th>Behavior</th>
+      <th>Random Favors Boss</th>
+      <th>Random Favors Raid </th>
+    </tr>
+  </thead>
+  <tfoot>
+      <td>Boss Fits Total Attack and Defense Vector</td>
+      <td>1004/2000</td>
+      <td>1008/2000</td>
+    </tfoot>
+  <tbody>
+    <tr>
+      <td>No action taken</td>
+      <td>1300/2000</td>
+      <td>855/2000</td>
+    </tr>
+    <tr>
+      <td>Boss Fits Total Defense Vector</td>
+      <td>1031/2000</td>
+      <td>1022/2000</td>
+    </tr>
+  </tbody>
+</table>
+ 
+Why does this number even out the more KMeans fitting we do? In our experiment we made 200 raids, 100 random ones and 100 biased ones representing the cybersocial optimized ones. So the boss is killing the optimized raids and being killed by those not following the cybersocial optimization.
+ 
+New problem: If this game play mechanic was introduced to the game then most players would not have any interaction with it at all. If you are unaware of the cybersocial optimization of the game then all this complicated machine learning means nothing. There is another problem, World of Warcraft has many API’s that allow developers to make add-ons and analyze in-game statistics. If players who were serious about cybersocial optimization create some third party software then they could know what the boss would fit next.
+ 
+We need to create some variance that scrambles the attempts to make counter analytics and includes more players than just the ones that chase cybersocial optimization. To do this we will set the centroid of the KMeans cluster that is the most concentrated as the center of an n-sphere. We can generate Cartesian coordinates by generating the random phi values as necessary:
+ 
+<p><span class="math display">\[x_1 = r cos(\phi_1 )\]</span></p>
+<p><span class="math display">\[x_2 = r sin(\phi_1 ) cos(\phi_2 )\]</span></p>
+<p><span class="math display">\[x_3 = r sin(\phi_1 ) sin(\phi_2 ) cos(\phi_3 )\]</span></p>
+<p><span class="math display">\[\dots\]</span></p>
+<p><span class="math display">\[x_{n-1} = r sin(\phi_1 ) \dots sin(\phi_{n-2} ) cos(\phi_{n-1} )\]</span></p>
+<p><span class="math display">\[x_{n} = r sin(\phi_1 ) \dots sin(\phi_{n-2} ) sin(\phi_{n-1} )\]</span></p>
+ 
+Once the random phi values are generated we have a cartesian point that lies on the surface of this unit n-sphere, we need to choose a radius, for simplicity we will find the radius between our most concentrated KMeans centroid and the next closest clusters’ centroid. Then generate a random number from zero to that radius (and slap the necessary absolute values on our sampled vectors). This random cartesian point multiplied by the radius is then added to the previous total attack/defense vector to give us our new total attack/defense vector randomly within the cybersocially optimized n-sphere local. When we do this we have the outcome:
+ 
+<table>
+  <thead>
+    <tr>
+      <th>Behavior</th>
+      <th>Random Favors Boss</th>
+      <th>Random Favors Raid </th>
+    </tr>
+  </thead>
+  <tfoot>
       <td>Boss Fits Total Attack and Defense Vector w/ n-sphere sampling</td>
       <td>1324/2000</td>
       <td>1661/2000</td>
@@ -116,36 +200,6 @@ When the boss has done no fitting we will track two scenarios, when the random i
     </tr>
   </tbody>
 </table>
-<b>Random initialization favors boss: Boss Score: 1300 Raid Score: 700</b>
-<b>Random initialization favors raids: Boss Score: 855 Raid Score: 1145</b>
- 
-In the scatter plot shown above we see black centroids, derived from the KMeans algorithm, for each group we can calculate which group is the most concentrated. That group represents some sort of cybersocial optimization of an attack vector. If the boss sets that centroid as its defense vector it would hopefully maximize the mitigated damage incoming from the raid. Checking the scores we see these changes:
- 
-<b>Random initialization favors boss: Boss Score: 1031 Raid Score: 969</b>
-<b>Random initialization favors raids: Boss Score: 1022 Raid Score: 978</b>
- 
-The boss is winning the majority of the battles against the raids in both cases. We will fit the bosses attack vector along with its defense vector using the same method.
- 
-<b>Random initialization favors boss: Boss Score: 1004 Raid Score: 996</b>
-<b>Random initialization favors raids: Boss Score: 1008 Raid Score: 992</b>
- 
-Why does this number even out the more KMeans fitting we do? In our experiment we made 200 raids, 100 random ones and 100 biased ones representing the cybersocial optimized ones. So the boss is killing the optimized raids and being killed by those not following the cybersocial optimization.
- 
-New problem: If this game play mechanic was introduced to the game then most players would not have any interaction with it at all. If you are unaware of the cybersocial optimization of the game then all this complicated machine learning means nothing. There is another problem, World of Warcraft has many API’s that allow developers to make add-ons and analyze in-game statistics. If players who were serious about cybersocial optimization create some third party software then they could know what the boss would fit next.
- 
-We need to create some variance that scrambles the attempts to make counter analytics and includes more players than just the ones that chase cybersocial optimization. To do this we will set the centroid of the KMeans cluster that is the most concentrated as the center of an n-sphere. We can generate Cartesian coordinates by generating the random phi values as necessary:
- 
-<p><span class="math display">\[x_1 = r cos(\phi_1 )\]</span></p>
-<p><span class="math display">\[x_2 = r sin(\phi_1 ) cos(\phi_2 )\]</span></p>
-<p><span class="math display">\[x_3 = r sin(\phi_1 ) sin(\phi_2 ) cos(\phi_3 )\]</span></p>
-<p><span class="math display">\[\dots\]</span></p>
-<p><span class="math display">\[x_{n-1} = r sin(\phi_1 ) \dots sin(\phi_{n-2} ) cos(\phi_{n-1} )\]</span></p>
-<p><span class="math display">\[x_{n} = r sin(\phi_1 ) \dots sin(\phi_{n-2} ) sin(\phi_{n-1} )\]</span></p>
- 
-Once the random phi values are generated we have a cartesian point that lies on the surface of this unit n-sphere, we need to choose a radius, for simplicity we will find the radius between our most concentrated KMeans centroid and the next closest clusters’ centroid. Then generate a random number from zero to that radius (and slap the necessary absolute values on our sampled vectors). This random cartesian point multiplied by the radius is then added to the previous total attack/defense vector to give us our new total attack/defense vector randomly within the cybersocially optimized n-sphere local. When we do this we have the outcome:
- 
-<b>Random initialization favors boss: Boss Score: 1324 Raid Score: 676</b>
-<b>Random initialization favors raids: Boss Score: 1611 Raid Score: 389</b>
  
 We see that with the sampling from the inside of an n-sphere our boss is able to beat not just the cybersocial optimization but a good amount of the raids not participating in the cybersocial optimization. Which is good, our goal was to challenge the cybersocial players and make an engaging gameplay mechanic for everyone. The n-sphere addition completes that goal!
  
