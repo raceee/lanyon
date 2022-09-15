@@ -85,7 +85,37 @@ To show cybersocial optimization we will initialize 200 raids to fight the boss 
 As you can see the cybersocial optimization is prevalent where the tightest concentration of raids are. Before we do any machine learning lets run this random initialization of the raids against a random initialization of the boss.
  
 When the boss has done no fitting we will track two scenarios, when the random initialization favors the boss and when the random initialization favors the raids, so here is the score.
- 
+<table>
+  <thead>
+    <tr>
+      <th>Behavior</th>
+      <th>Random Favors Boss</th>
+      <th>Random Favors Raid </th>
+    </tr>
+  </thead>
+  <tfoot>
+      <td>Boss Fits Total Attack and Defense Vector w/ n-sphere sampling</td>
+      <td>1324/2000</td>
+      <td>1661/2000</td>
+    </tfoot>
+  <tbody>
+    <tr>
+      <td>No action taken</td>
+      <td>1300/2000</td>
+      <td>855/2000</td>
+    </tr>
+    <tr>
+      <td>Boss Fits Total Defense Vector</td>
+      <td>1031/2000</td>
+      <td>1022/2000</td>
+    </tr>
+    <tr>
+      <td>Boss Fits Total Attack and Defense Vector</td>
+      <td>1004/2000</td>
+      <td>1008/2000</td>
+    </tr>
+  </tbody>
+</table>
 <b>Random initialization favors boss: Boss Score: 1300 Raid Score: 700</b>
 <b>Random initialization favors raids: Boss Score: 855 Raid Score: 1145</b>
  
